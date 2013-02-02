@@ -2,6 +2,11 @@
 /lib
 /classes
 /checkouts
+/resources/**/*.css
+/resources/**/*.js
+/resources/**/*.html
+/resources/public/stylesheets
+.sass-cache
 pom.xml
 *.jar
 *.class
