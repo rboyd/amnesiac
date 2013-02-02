@@ -1,7 +1,8 @@
 !!! 5
 %html
   %head
-  %link{"rel" => "stylesheet", "href" => "stylesheets/main.css", "type" => "text/css"}
+    %link{"rel" => "stylesheet", "href" => "stylesheets/main.css", "type" => "text/css"}
+    %script{"src" => "amnesiac.js"}
   %body
     .container
       .card
@@ -10,3 +11,5 @@
           %img{ src: 'images/prev.png' }
         %a#next
           %img{ src: 'images/next.png' }
+      :javascript
+        amnesiac.core.main();

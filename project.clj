@@ -4,7 +4,10 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.4.0"]
-                 [org.clojure/clojurescript "0.0-1450"]
+                 [org.clojure/google-closure-library "0.0-2029"]
+                 [org.clojure/google-closure-library-third-party "0.0-2029"]
+                 [domina "1.0.1"]
+                 [org.clojure/clojurescript "0.0-1576"]
                  [compojure "1.1.5"]
                  [com.novemberain/monger "1.4.2"]]
   :plugins [[lein-ring "0.8.2"]
