@@ -1,0 +1,31 @@
+$beige: #a18140
+
+.container
+  $container-width: 640px
+  $container-height: 480px
+  width: $container-width
+  height: $container-height
+  background-color: $beige
+  overflow: auto
+  margin: 0 auto
+
+  .card
+    margin-top: $container-height * .1
+    margin-left: $container-width * .1
+    width: $container-width * .8
+    height: $container-height * .7
+    background-color: lighten($beige, 30%)
+    
+  .controller
+    background-color: darken($beige, 10%)
+    height: 35px
+    width: $container-width * .9
+    margin: 30px auto
+    #next img
+      margin-top: 5px
+      margin-right: 20px
+      float: right
+ 
+    #prev img
+      margin-top: 5px
+      margin-left: 20px
