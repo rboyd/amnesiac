@@ -6,4 +6,7 @@
 (mg/connect!)
 (mg/set-db! (mg/get-db "test"))
 
-(mgc/insert "documents" { :_id (ObjectId.) :first_name "John" :last_name "Lennon" })
+(defn random-card
+  "Fetches random card text from the database."
+  []
+  (:text (rand-nth (mgc/find-maps "cards"))))
