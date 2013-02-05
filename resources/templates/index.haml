@@ -4,6 +4,9 @@
     %link{"rel" => "stylesheet", "href" => "stylesheets/main.css", "type" => "text/css"}
     %script{"src" => "amnesiac.js"}
   %body
+    .menu
+      %button#add-card
+        Add Card
     .container
       .card
         %p#card-text
@@ -14,3 +17,8 @@
           %img{ src: 'images/next.png' }
       :javascript
         amnesiac.core.main();
+    #add-card-widget{ style: "display: none" }
+      %textarea#question
+      %textarea#answer
+      %button#save-card
+        Save Card

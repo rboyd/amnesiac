@@ -12,7 +12,10 @@
   (GET "/images/prev.png" [] (resp/resource-response "/images/prev.png" {:root "public"}))
   (GET "/images/next.png" [] (resp/resource-response "/images/next.png" {:root "public"}))
   (GET "/cards/random" [] (resp/response (db/random-card)))
-  (route/not-found "Not Found"))
-
+  (POST "/cards" request {:status 200 :body (->
+                                             (:body request)
+                                             slurp
+                                             db/save-card
+                                             str)}))
 (def app
   (handler/site app-routes))

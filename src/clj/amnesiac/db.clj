@@ -1,6 +1,7 @@
 (ns amnesiac.db
-  (:require [monger.core :as mg])
-  (:require [monger.collection :as mgc])
+  (:require [monger.core :as mg]
+            [monger.collection :as mgc]
+            [clojure.data.json :as json])
   (:import [org.bson.types ObjectId]))
 
 (mg/connect!)
@@ -9,4 +10,14 @@
 (defn random-card
   "Fetches random card text from the database."
   []
-  (:text (rand-nth (mgc/find-maps "cards"))))
+  (:question (rand-nth (mgc/find-maps "cards"))))
+
+(defn save-card
+  "Saves a new card to the database."
+  [card-json]
+  (let [card (json/read-str card-json)
+        id (ObjectId.)
+        q  (get card "question")
+        a  (get card "answer")]
+    (mgc/insert "cards" {:_id id :question q :answer a}))
+  "OK")

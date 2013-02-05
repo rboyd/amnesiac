@@ -9,7 +9,8 @@
                  [domina "1.0.1"]
                  [org.clojure/clojurescript "0.0-1576"]
                  [compojure "1.1.5"]
-                 [com.novemberain/monger "1.4.2"]]
+                 [com.novemberain/monger "1.4.2"]
+                 [org.clojure/data.json "0.2.1"]]
   :plugins [[lein-ring "0.8.2"]
             [lein-cljsbuild "0.3.0"]]
   :source-paths ["src/clj"
