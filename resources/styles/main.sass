@@ -2,6 +2,8 @@ $beige: #a18140
 
 body
   background-image: url('/images/dark_leather.png')
+  font-size: 100%
+  line-height: 1.125em
 
 .container
   $container-width: 640px
@@ -11,14 +13,19 @@ body
   background-color: $beige
   overflow: auto
   margin: 0 auto
+  -moz-border-radius: 15px
+  border-radius: 15px
+  background-image: url('/images/creampaper.png')
 
   .card
     margin-top: $container-height * .1
     margin-left: $container-width * .1
     width: $container-width * .8
     height: $container-height * .7
-    background-color: lighten($beige, 30%)
-    
+    font-family: Century Gothic, sans-serif
+    line-height: 1em
+    font-size: 3em
+
   .controller
     background-color: darken($beige, 10%)
     height: 35px
