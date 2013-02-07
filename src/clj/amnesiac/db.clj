@@ -10,7 +10,11 @@
 (defn random-card
   "Fetches random card text from the database."
   []
-  (:question (rand-nth (mgc/find-maps "cards"))))
+  (->
+    (mgc/find-maps "cards")
+    rand-nth
+    (select-keys [:question :answer])
+    json/write-str))
 
 (defn save-card
   "Saves a new card to the database."

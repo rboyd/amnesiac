@@ -28,10 +28,16 @@
   (domina/set-styles! (domina/by-id "add-card-widget") {:display "inline"})
   (events/listen! (css/sel "#save-card") :click #(save-card)))
 
+(def card (atom {}))
+
 (defn replace-card
   "Replaces the current card with a newly selected card"
   [text]
-  (domina/set-text! (domina/by-id "card-text") text))
+  (reset! card (JSON/parse text))
+  (domina/set-text! (domina/by-id "card-text") (aget @card "question")))
+
+(defn reveal []
+  (domina/set-text! (domina/by-id "card-text") (aget @card "answer")))
 
 (defn request-card
   "Request a new card from the server"
@@ -43,5 +49,6 @@
   "The program's entrypoint"
   []
   (events/listen! (css/sel "#add-card") :click #(add-card))
+  (events/listen! (css/sel "#prev") :click #(reveal))
   (events/listen! (css/sel "#next") :click #(request-card))
   (repl/connect "http://localhost:9000/repl"))
